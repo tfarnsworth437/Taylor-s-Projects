@@ -83,3 +83,77 @@ iframe {
 	height: 375px;}
 table iframe {
 	max-height: 75%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html {
+	background-color: yellow;}
+.name {
+	text-align: center;}
+p { 
+	text-align: justify;
+	line-height: 1.5em;
+	width: 100%;}
+a { 
+	color: blue;
+	text-decoration: none;}
+a:hover {
+	background-color: yellow;}
+table {
+	width: 100%;
+	text-align: center;}
+td {
+	border-color: yellow;
+	border-style: solid;}
+h1 { 
+	color: blue;
+	font-style: italic;
+	font-size: 3em;}
+h2 { 
+	color: aqua;
+	font-weight: lighter;
+	font-size: 2em;}
+h3 { 
+	font-size: 1.3em;
+	color: yellow;}
+nav {
+	text-align-last: center;
+	font-size: 1.2em;
+	background-color: yellow;}
+nav li {
+	display: inline;}
+.banner {
+	display: block;
+ 	margin-left: auto;
+  	margin-right: auto;
+	width: 30%; height: 70%;}
+.banner2 {
+	width: 20%; height: 20%;}
+body {
+	font-family: Helvetica, sans-serif; 
+	background-color: green;
+	border-color: blue;
+	width: 80%;
+	margin-top: 0px; 
+	margin-right: auto;
+	margin-bottom: 0px; 
+	margin-left: auto; 
+	border-bottom-style: groove;	 
+	padding-top: 2em;
+	padding-right: 2em;
+	padding-bottom: 2em;
+	padding-left: 2em;}
+.banner3 {
+	height: 500px;
+	width: 100%;}
