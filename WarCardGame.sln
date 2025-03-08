@@ -1,0 +1,90 @@
+using System;
+
+namespace WarCardGame
+{
+    class Program
+    {
+        static int[] deck = new int[52]; 
+        static int finalIndexCard = 0;
+        static char[] cardNames = { 'A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K' };
+        static Random rand = new Random();
+        static void Main()
+        {
+            int computerPoints = 0;
+            int playerPoints = 0; 
+            string result = null;
+
+            FillDeck();
+            Console.Clear();
+
+            for (int x = 0; x < 26; x++)
+            {
+                int computer = SelectCard() - 1;
+                int player = SelectCard() - 1;
+
+                if (computer > player)
+                {
+                    result = ("2 points go to computer");
+                    computerPoints += 2;
+                }
+                else if (computer < player)
+                {
+                    result = ("2 points go to player");
+                    playerPoints += 2;
+                }
+                else
+                {
+                    result = ("1 point each");
+                    computerPoints += 1;
+                    playerPoints += 1;
+                }
+
+                Console.WriteLine("Deal {0, 2}: Computer '{1}' - Player '{2}' : {3}", x + 1, cardNames[computer], cardNames[player], result);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Computer's total score : {0}", computerPoints);
+            Console.WriteLine("Player's total score   : {0}", playerPoints);
+
+            if (computerPoints > playerPoints)
+            {
+                result = ("Computer wins!");
+            }
+            else if (computerPoints < playerPoints)
+            {
+                result = ("Player wins!");
+            }
+            else
+            {
+                result = ("It's a draw!");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine(result);
+            Console.ReadKey();
+        }
+
+        static void FillDeck()
+        {
+            for (int x = 0; x < 52; x++)
+            {
+                while (true)
+                {
+                    int number = rand.Next(1, 53); 
+                    if (Array.IndexOf(deck, number) == -1) 
+                    {
+                        deck[x] = number;
+                        break;
+                    }
+                }
+            }
+        }
+
+        static int SelectCard()
+        {
+            int number = deck[finalIndexCard];
+            finalIndexCard++;
+            return (number - 1) / 4 + 1;
+        }
+    }
+}
